@@ -1,0 +1,44 @@
+{% load staticfiles %}
+<! DOCTYPE html>
+<html>
+    <head>
+        <title>TreasureGram</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'bootstrap.min.css' %}">
+        <meta charset="UTF-8">
+    </head>
+    <body>
+    <nav class="container-fluid text-center bg-success mb-3">
+        <a href="#">
+            <img src="{% static 'images/treasures.png' %}" alt="TresureGram">
+        </a>
+    </nav>
+<div class="container-fluid">
+    {% for treasure in treasures %}
+        <div class="treasure-cell row m-3 pt-2">
+        <div class="col-md-4 ml-5">
+            <h3><img src="{{ treasure.img_url}}"></h3>
+        </div>
+        <div class="col-md-5">
+
+                <h2>{{ treasure.name }}</h2>
+                <p>
+                    <span>Material: </span>{{ treasure.material }}
+                </p>
+                <p>
+                    <span>Found in: </span>{{ treasure.location }}
+                </p>
+                <p>
+                    <span>Value:</span>
+                    {% if treasure.value > 0 %}
+                        {{ treasure.value }}
+                    {% else %}
+                        {{ "unknown" }}
+                    {% endif %}
+                </p>
+                </div>
+         </div>
+    {% endfor %}
+</div>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+p {
+    color: green;
+}
+span {
+    color: black;
+    font-weight: bold;
+}
+h2, h3, p {
+    font-family: 'Georgia', Arial, serif;
+}
+
+body{
+    background-color: #ecffa7 !important;
+}
+
+.treasure-cell{
+    border: 1px solid #ffb82a;
+    border-radius: 9px;
+}
+
+.treasure-cell:hover{
+    background-color: yellowgreen;
+}
+
+img {
+    max-width: 200px;
+}
